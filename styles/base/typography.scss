@@ -1,0 +1,36 @@
+body {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+li,
+legend {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: color(primary);
+
+	&:hover {
+		color: inherit;
+	}
+
+	&[href^='mailto:'],
+	&[href^='tel:'] {
+		white-space: nowrap;
+	}
+}

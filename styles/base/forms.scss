@@ -39,19 +39,81 @@ input::-webkit-inner-spin-button {
 	appearance: none;
 }
 
-input[type=date],
 input[type=email],
-input[type=number],
-input[type=password],
-input[type=search],
 input[type=tel],
 input[type=text],
-input[type=time],
-input[type=url],
 textarea {
 	@extend %input;
 }
 
 select {
 	@extend %select;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+	border-bottom: 1px solid color( body ) !important;
+}
+
+
+.gform_heading {
+	display: none;
+}
+
+.gfield--honeypot {
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	left: 0;
+}
+#field_1_3 label {
+	display: none;
+}
+
+
+.gform_body > div > * {
+	display: flex;
+	align-items: center;
+}
+fieldset {
+	width: 50%;
+
+	> div {
+		width: 100%;
+	}
+}
+legend {
+	float: left;
+}
+
+#field_1_3 {
+	margin: 0 0 0.875rem 0;
+}
+
+#field_1_5,
+#field_1_6 {
+	float: left;
+	width: 50%;
+	margin: 0 0 0.875rem 0;
+}
+
+#field_1_7 {
+	clear: both;
+}
+
+.gform_footer {
+	position: absolute;
+	left: 50%;
+	transform: translateX( -50% );
+}
+
+form {
+	padding: 1.375rem 3.375rem 1.375rem 1.25rem;
+}
+
+input[type="submit"] {
+	text-transform: lowercase;
 }

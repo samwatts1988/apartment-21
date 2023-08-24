@@ -1,4 +1,11 @@
 body {
+	font-size: 0.875rem;
+	// font-size: 1rem;
+	text-transform: lowercase;
+
+	@include bp( 835px ) {
+		font-size: 1rem;
+	}
 }
 
 h1,
@@ -17,13 +24,17 @@ legend {
 	padding: 0;
 }
 
+address {
+	font-style: normal;
+}
+
 nav ul {
 	list-style: none;
 }
 
 a {
 	text-decoration: none;
-	color: color(primary);
+	color: color(body);
 
 	&:hover {
 		color: inherit;

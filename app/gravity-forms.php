@@ -18,7 +18,7 @@ add_filter( 'gform_tabindex', '__return_zero' );
 /**
  * Force scripts to the footer.
  */
-add_filter( 'gform_init_scripts_footer', '__return_true' );
+// add_filter( 'gform_init_scripts_footer', '__return_true' );
 
 /**
  * Force scripts to the footer for AJAX forms.
@@ -32,6 +32,14 @@ add_filter( 'gform_get_form_filter', function ( $html ) {
 
 	return str_replace( $match[0], '', $html );
 });
+
+/**
+ * Prevent page jumping when submitting form via AJAX
+ */
+add_filter( 'gform_confirmation_anchor', '__return_true' );
+add_filter( 'gform_confirmation_anchor', function() {
+    return 0;
+} );
 
 /**
  * Add size & type state classes.
@@ -54,3 +62,4 @@ add_filter( 'gform_field_content', function ( $html, $field ) {
 
 	return $html;
 }, 10, 2 );
+

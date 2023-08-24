@@ -1,0 +1,20 @@
+.details {
+	margin: 0 auto 0 auto;
+	width: 90.4%;
+	text-align: right;
+
+	@include bp( 835px ) {
+		bottom: 5.25rem;
+		top: auto;
+		left: auto;
+		right: 8.75%;
+		position: absolute;
+		width: auto;
+	}
+
+	nav ul {
+		display: flex;
+		justify-content: flex-end;
+		margin: 0 0 1.0625rem 0;
+	}	
+}

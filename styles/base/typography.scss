@@ -3,7 +3,7 @@ body {
 	// font-size: 1rem;
 	text-transform: lowercase;
 
-	@include bp( 835px ) {
+	@include bp( $breakpoint ) {
 		font-size: 1rem;
 	}
 }

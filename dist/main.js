@@ -1,3 +1,5 @@
+var fadeUp;
+
 /**
  * Throttle execution of a function. Especially useful for rate limiting
  * execution of handlers on events like resize and scroll.
@@ -201,38 +203,72 @@ jQuery.debounce = function (delay, atBegin, callback) {
 
 })(jQuery);
 
+// (($) => {
+
+// 	$( document ).ready(function() {
+
+// 		console.log( "Design by https://acommonpurpose.co.uk" );
+// 		console.log( "Code by https://samwatts.net" );
+
+// 		// $.getScript( 'https://cdnjs.cloudflare.com/ajax/libs/ajaxify/8.2.3/ajaxify.min.js', function() {
+// 		// 	let ajaxify = new Ajaxify({
+// 		// 		elements: "#content",
+// 		// 		selector: "a:not(.no-ajax)",
+// 		//         requestDelay: 750,
+// 		//         bodyClasses: true,
+// 		//         prefetchoff: true,
+// 		//         refresh: true,
+// 		//         forms: false,
+// 		//         prefetchoff: false,
+// 		//         inline: true,
+// 		//         inlinesync: true,
+// 		//         inlineappend: true,
+// 		//         pluginon: true  			
+// 		// 	});
+		
+// 		// 	window.addEventListener( 'pronto.request', function(event) {
+// 		// 		// setTimeout(() => {
+// 		// 			$( '.frame' ).addClass( 'fade-out' );
+// 		// 			// $( '.frame' ).fadeOut();
+// 		// 		// }, 500);
+// 		// 	});
+
+// 		// 	window.addEventListener( 'pronto.render', function(event) {
+// 		// 		// setTimeout(() => {
+// 		// 			fadeUp();
+// 		// 			// $( '.frame' ).removeClass( 'fade-out' );
+// 		// 			// $( '.frame' ).fadeIn();
+// 		// 		// }, 1000);
+// 		// 	});	
+
+// 		// });
+
+// 	});
+
+// })( jQuery );
 (function ($) {
 
-	$( document ).ready(function() {
+	// fadeUp = function() {
+		setTimeout(function () {
+			$( '.frame' ).removeClass( 'fade-out' );
+		}, 1000);
+	// }
 
-		console.log( "Design by https://acommonpurpose.co.uk" );
-		console.log( "Code by https://samwatts.net" );
+	// fadeUp();
 
-		$.getScript( 'https://cdnjs.cloudflare.com/ajax/libs/ajaxify/8.2.3/ajaxify.min.js', function() {
-			var ajaxify = new Ajaxify({
-				elements: "#content",
-				selector: "a:not(.no-ajax)",
-		        requestDelay: 300,
-		        bodyClasses: true,
-		        prefetchoff: true,
-		        refresh: true,
-		        forms: false,
-		        prefetchoff: false,
-		        inline: true,
-		        inlinesync: true,
-		        inlineappend: true,
-		        pluginon: true  			
-			});
-		
-			window.addEventListener( 'pronto.request', function(event) {
+})( jQuery );
+(function ($) {
 
-			});
+	var $navigator = $( '.navigator' );
 
-			window.addEventListener( 'pronto.render', function(event) {
+	$navigator.on( 'click', function (e) {
+		e.preventDefault();
 
-			});	
+		$( '.frame' ).addClass( 'fade-out' );
 
-		});
+		setTimeout(function () {
+			window.location.href = e.target.href;
+		}, 500);
 
 	});
 

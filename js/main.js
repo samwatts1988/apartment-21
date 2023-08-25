@@ -1,3 +1,5 @@
+let fadeUp;
+
 //=require vendor/*
 //=require lib/*
 //=require components/*

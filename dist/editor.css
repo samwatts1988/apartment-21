@@ -151,6 +151,10 @@ input[type=tel] {
 	border-bottom: 1px solid #000000 !important;
 }
 
+label {
+	margin: 0 0.625rem 0 0;
+}
+
 .gform_heading {
 	display: none;
 }
@@ -172,10 +176,6 @@ input[type=tel] {
 	display: flex;
 	align-items: center;
 }
-
-fieldset {
-	width: 50%;
-}
 fieldset > div {
 	width: 100%;
 }
@@ -185,31 +185,52 @@ legend {
 }
 
 #field_1_3 {
-	margin: 0 0 0.875rem 0;
+	margin: 0 0 0.6875rem 0;
 }
 
 #field_1_5,
 #field_1_6 {
-	float: left;
-	width: 50%;
-	margin: 0 0 0.875rem 0;
+	margin: 0 0 0.6875rem 0;
+}
+#field_1_5 .ginput_container,
+#field_1_6 .ginput_container {
+	width: 100%;
 }
 
 #field_1_7 {
 	clear: both;
+	align-items: flex-start;
+}
+#field_1_7 label {
+	margin: 0.125rem 0 0 0;
 }
 
 .gform_footer {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
+	top: auto;
+	bottom: -2.5625rem;
 }
 
+textarea {
+	height: 5rem;
+	overflow: hidden;
+	resize: none;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.gform_confirmation_wrapper,
 form {
-	padding: 1.375rem 3.375rem 1.375rem 1.25rem;
+	position: relative;
+	padding: 1.0625rem 1.3125rem 0.25rem 1.375rem;
+	height: 11.9375rem;
+	font-size: 1rem;
 }
 
 input[type=submit] {
+	border: unset;
 	text-transform: lowercase;
 }
 
@@ -255,6 +276,11 @@ select {
 	height: 100%;
 }
 
+.vimeo-wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
 body {
 	margin: 1em;
 	max-width: 990px;
@@ -262,9 +288,38 @@ body {
 body > :first-child {
 	margin-top: 0;
 }
-@media screen and (min-width: 835px) {
+@media screen and (min-width: 630px) {
 	body {
 		font-size: 1rem;
+	}
+	label {
+		margin: 0 0.1875rem 0 0;
+	}
+	fieldset {
+		width: 50%;
+	}
+	#field_1_3 {
+		margin: 0 0 1.0625rem 0;
+	}
+	#field_1_5 .ginput_container {
+		margin: 0 0.9375rem 0 0;
+	}
+	#field_1_5,
+#field_1_6 {
+		float: left;
+		margin: 0 0 0.875rem 0;
+	}
+	#field_1_5 .ginput_container,
+#field_1_6 .ginput_container {
+		width: 13.625rem;
+	}
+	textarea {
+		height: auto;
+	}
+	.gform_confirmation_wrapper,
+form {
+		height: 20.8125rem;
+		padding: 1.375rem 3.375rem 1.375rem 1.25rem;
 	}
 }
 /*# sourceMappingURL=editor.css.map */

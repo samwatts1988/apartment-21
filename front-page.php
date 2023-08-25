@@ -1,10 +1,13 @@
 <?php get_header(); ?>
 
-	<article class="frame">
-		<h1 class="screen-reader-text"><?php echo get_the_title(); ?></h1>
+<?php $vimeo = get_field( 'vimeo_url' ); ?>
 
+	<article class="frame fade-out">
+		<h1 class="screen-reader-text"><?php echo get_the_title(); ?></h1>
 		<figure>
-			<img src="<?php echo get_stylesheet_directory_uri() ;?>/images/apartment-21-placeholder.jpg" alt="<?php echo bloginfo( 'title' ); ?>">
+			<div class="vimeo-wrapper">
+				<iframe title="Apartment 21 Showreel" src="<?php echo $vimeo; ?>" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>		
+			</div>
 		</figure>
 
 		<ul>

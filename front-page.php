@@ -6,7 +6,8 @@
 		<h1 class="screen-reader-text"><?php echo get_the_title(); ?></h1>
 		<figure>
 			<div class="vimeo-wrapper">
-				<iframe title="Apartment 21 Showreel" src="<?php echo $vimeo; ?>" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>		
+				<iframe title="Apartment 21 Showreel" src="<?php echo $vimeo; ?>" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>		
+				<script src="https://player.vimeo.com/api/player.js"></script>
 			</div>
 		</figure>
 

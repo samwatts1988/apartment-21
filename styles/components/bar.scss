@@ -1,0 +1,14 @@
+.bar {
+	position: absolute;
+	top: 0;
+	left: auto;
+	right: 19.2%;
+	background: #ee940d;
+	width: 1rem;
+	height: 8.75rem;
+
+	@include bp( $breakpoint ) {
+		height: 12rem;
+		right: 10.41%;
+	}
+}

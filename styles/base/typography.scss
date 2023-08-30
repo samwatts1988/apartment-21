@@ -1,3 +1,27 @@
+html {
+	font: normal 400 90%/1.2 serif;
+
+	@include bp( 375px ) {
+		font: normal 400 100%/1.2 serif;
+	}
+
+	@include bp( 1280px ) {
+		font: normal 400 90%/1.2 serif;				
+	}
+
+	@include bp( 1440px ) {
+		font: normal 400 100%/1.2 serif;				
+	}
+
+	@include bp( 1680px ) {
+		font: normal 400 112.5%/1.2 serif;		
+	}
+
+	@include bp( 1921px ) {
+		font: normal 400 125%/1.2 serif;		
+	}
+}
+
 body {
 	font-size: 0.875rem;
 	// font-size: 1rem;

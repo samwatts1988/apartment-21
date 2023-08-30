@@ -15,3 +15,4 @@
 	<?php wp_body_open() ?>
 
 	<main class="flex" id="content">
+		<span class="bar"></span>

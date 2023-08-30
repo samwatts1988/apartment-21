@@ -44,6 +44,13 @@ input[type=tel],
 input[type=text],
 textarea {
 	@extend %input;
+	padding-top: 0.125rem;
+
+	@media not all and (min-resolution:.001dpcm)
+	{ @supports (-webkit-appearance:none) {
+		margin: 0 0 0 0;
+		padding-top: 0.03125rem;
+	}}
 }
 
 select {
@@ -53,7 +60,7 @@ select {
 input[type="text"],
 input[type="email"],
 input[type="tel"] {
-	border-bottom: 1px solid color( body ) !important;
+	border-bottom: 0.03125rem solid color( body ) !important;
 }
 
 	label {
@@ -95,13 +102,64 @@ fieldset {
 	}
 }
 legend {
-	float: left;
+	display: none;
 }
 
 #field_1_3 {
 	margin: 0 0 0.6875rem 0;
+	flex-wrap: wrap;
 	@include bp( $breakpoint ) {
 		margin: 0 0 1.0625rem 0;
+	}
+
+	.ginput_complex {
+		display: flex;
+		width: 16.25rem;
+		@media screen and ( max-width: $breakpoint ) {
+			display: flex;
+			width: auto; 
+			flex: 1;
+		}
+
+		span {
+			width: 100%;
+
+			input {
+				padding-top: 0;
+			}
+
+			@media not all and (min-resolution:.001dpcm)
+			{ @supports (-webkit-appearance:none) {
+				margin: 0 0 0 0;
+				padding-top: 0.03125rem;
+
+				@include bp( $breakpoint ) {
+					margin: -0.09375rem 0 0 0;
+				}
+			}}
+		}
+
+		&::before {
+			display: flex;
+			content:"name: ";
+			margin: 0 0.625rem 0 0;
+
+			@include bp( $breakpoint ) {
+				margin: 0 0.25rem 0 0;
+			}
+		}
+	}
+}
+
+textarea {
+	@media screen and ( max-width: $breakpoint ) {
+		// margin-top: 0.09375rem;
+	}
+}
+
+.ginput_container {
+	@include bp( $breakpoint ) {
+		margin: 0 0 0 0;
 	}
 }
 
@@ -115,23 +173,23 @@ legend {
 
 #field_1_5,
 #field_1_6 {
+	flex-wrap: wrap;
 	margin: 0 0 0.6875rem 0;
 	@include bp( $breakpoint ) {
 		float: left;
-		margin: 0 0 0.875rem 0;
+		margin: 0 0 1.125rem 0;
 	}
-
+	.gfield_validation_message {
+		display: none;
+	}
 	.ginput_container {
-		width: 100%;
+		width: auto;
+		flex: 1;
 		@include bp( $breakpoint ) {
 			width: 13.625rem;
 		}
 	}
 }
-
-// .gfield {
-// 	background: red;
-// }
 
 #field_1_7 {
 	clear: both;
@@ -139,6 +197,10 @@ legend {
 
 	label {
 		margin: 0.125rem 0 0 0;
+	}
+
+	.gfield_validation_message {
+		display: none;
 	}
 }
 
@@ -166,11 +228,11 @@ textarea {
 form {
 	position: relative;
 	padding: 1.0625rem 1.3125rem 0.25rem 1.375rem;
-	height: 11.9375rem;
 	font-size: 1rem;
 
 	@include bp( $breakpoint ) {
-		height: 20.8125rem;
+		// height: 20.8125rem;
+		height: 25.875rem;
 		padding: 1.375rem 3.375rem 1.375rem 1.25rem;
 	}
 }
@@ -178,4 +240,76 @@ form {
 input[type="submit"] {
 	border: unset;
 	text-transform: lowercase;
+	-webkit-appearance: none;
+	color: color( body );
+	background-color: unset;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+textarea {
+	border-left: 0;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 0.03125rem solid color( body ) !important;
+	font-family: serif;
+	-webkit-box-shadow: 0 0 0px 1000px color( light-tint ) inset;
+}
+
+textarea {
+
+	@media screen and ( max-width: 320px ) {
+		height: 11.5vw;
+	}
+
+	border-bottom: 0 !important;
+	// height: 4.375rem;
+	height: 13.92vw;
+
+	@include bp( $breakpoint ) {
+		height: auto;
+	}
+}
+
+.gform_confirmation_wrapper,
+.gform_wrapper {
+	@media screen and ( max-width: $breakpoint ) {
+		padding-top: 56.34%;
+		position: relative;
+	}
+
+	> * {
+		@media screen and ( max-width: $breakpoint ) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.gform_confirmation_wrapper {
+	> * {
+		@media screen and ( max-width: $breakpoint ) {
+			max-height: calc( 100% - 0.25rem );
+			padding: 1.0625rem 1.3125rem 0.25rem 1.375rem;
+		}
+	}
+}
+
+.gfield_validation_message {
+	font-size: 0.875rem;
+	margin: 0.25rem 0 0 0;
+}
+
+.gform_submission_error {
+	display: none;
 }

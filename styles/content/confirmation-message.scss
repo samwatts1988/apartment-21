@@ -1,0 +1,19 @@
+.gform_confirmation_message {
+	line-height: 0.95;
+
+	@include bp( $breakpoint ) {
+		line-height: 1.2;
+	}
+
+	a {
+		position: absolute;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    top: auto;
+	    bottom: -2.5625rem;
+	}
+}
+
+body img.gform_ajax_spinner {
+	display: none !important;
+}

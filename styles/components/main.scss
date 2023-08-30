@@ -10,7 +10,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 0 0 2.375rem 0;
+	padding: 2.375rem 0;
 
 	@include bp( $breakpoint ) {
 		padding: 0;

@@ -11,7 +11,7 @@ get_header(); ?>
 		<article class="frame about text-content">
 			<?php the_content(); ?>
 
-			<p><a href="<?php echo bloginfo( 'url' ); ?>">Close</a></p>
+			<p><a class="close" href="<?php echo bloginfo( 'url' ); ?>">Close</a></p>
 		</article>
 
 	<?php endwhile; endif; ?>

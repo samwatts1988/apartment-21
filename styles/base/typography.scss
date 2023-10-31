@@ -5,6 +5,10 @@ html {
 		font: normal 400 100%/1.2 serif;
 	}
 
+	@include bp( 500px ) {
+		font: normal 400 80%/1.2 serif;				
+	}
+
 	@include bp( 1280px ) {
 		font: normal 400 90%/1.2 serif;				
 	}
@@ -24,7 +28,6 @@ html {
 
 body {
 	font-size: 0.875rem;
-	// font-size: 1rem;
 	text-transform: lowercase;
 
 	@include bp( $breakpoint ) {

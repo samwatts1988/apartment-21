@@ -1,12 +1,11 @@
 .frame {
-	opacity: 1;
+	// opacity: 1;
 	margin: auto 0 auto 0;
 	flex-direction: column;
-	transition: opacity 750ms ease;
+	// transition: opacity 750ms ease;
 	width: 90.4%;
 
 	@include bp( $breakpoint ) {
-		// width: 37rem;
 		width: 46.25rem;
 	}
 
@@ -18,8 +17,6 @@
 		@include bp( $breakpoint ) {
 			padding: 0;
 			height: 26rem;
-			// height: 22.8125rem;
-			// height: 20.8125rem;
 		}
 	}
 
@@ -63,7 +60,7 @@
 		}
 	}
 
-	&.fade-out {
-		opacity: 0;
-	}
+	// &.fade-out {
+	// 	opacity: 0;
+	// }
 }

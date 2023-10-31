@@ -1,0 +1,15 @@
+html,
+body {
+	height: 100%;
+	overflow: hidden;
+}
+
+
+[data-barba="container"] {
+	opacity: 1;
+	transition: opacity 500ms ease;
+	overflow: hidden;
+	&.fade-out {
+		opacity: 0;
+	}
+}

@@ -1,0 +1,7 @@
+.about {
+	&.frame {
+		@include bp( $breakpoint ) {
+			width: 37rem;
+		}
+	}
+}

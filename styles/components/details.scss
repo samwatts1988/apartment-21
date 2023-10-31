@@ -4,7 +4,6 @@
 	text-align: right;
 
 	@include bp( $breakpoint ) {
-		// bottom: 5.25rem;
 		bottom: 5.1875rem;
 		top: auto;
 		left: auto;
@@ -22,4 +21,43 @@
 			margin: 0 0 1rem 0;
 		}
 	}	
+
+	nav + nav ul {
+		column-gap: 1.5rem;
+		margin: 0;
+	}
+
+	[aria-current="page"] {
+		position: relative;
+	}
+
+	[aria-current="page"]::after {
+		content: " ";
+		display: block;
+		width: 150%;
+		height: 100%;
+		background: #ee940d;
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		transform: translateX( -17.5% );
+	}
+}
+
+.page-template-tpl-about-php {
+	nav + nav li:first-of-type {
+		position: relative;
+		&::after {
+			@extend %active;
+		}
+	}
+}
+
+.page-template-tpl-enquire-php {
+	nav + nav li:last-of-type {
+		position: relative;
+		&::after {
+			@extend %active;
+		}
+	}
 }

@@ -7,9 +7,18 @@
 					<p><?php echo get_field( 'address', 'option' ); ?></p>
 				</address>
 			</li>
-			<li></li>		
 		</ul>
 	</nav>
+	<nav>
+		<?php
 
-	<a class="navigator" href="<?php echo get_the_permalink( 9 ); ?>"><?php echo get_the_title( 9 ); ?></a>
+		wp_nav_menu([
+			'theme_location' => 'header',
+			'items_wrap'     => '<ul class="flex">%3$s</ul>',
+			'fallback_cb'    => '',
+			'container'      => '',
+		]);
+
+		?>
+	</nav>
 </header>

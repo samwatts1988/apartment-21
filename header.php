@@ -11,8 +11,9 @@
 	<script>document.documentElement.className='has-js';</script>
 	<?php wp_head() ?>
 </head>
-<body <?php body_class( 'bg:light' ) ?>>
+<body data-barba="wrapper" <?php body_class( 'bg:light' ) ?>>
 	<?php wp_body_open() ?>
+	
+	<span class="bar"></span>
 
-	<main class="flex" id="content">
-		<span class="bar"></span>
+	<main data-barba="container" class="flex fade-out" id="content">

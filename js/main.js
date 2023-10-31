@@ -1,4 +1,4 @@
-let fadeUp;
+let landing;
 
 //=require vendor/*
 //=require lib/*

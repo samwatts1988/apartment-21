@@ -2,7 +2,7 @@
 
 <?php $vimeo = get_field( 'vimeo_url' ); ?>
 
-	<article class="frame fade-out">
+	<article class="frame">
 		<h1 class="screen-reader-text"><?php echo get_the_title(); ?></h1>
 		<figure>
 			<div class="vimeo-wrapper">

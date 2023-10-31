@@ -298,6 +298,30 @@ jQuery.debounce = function (delay, atBegin, callback) {
 	landing();
 
 })( jQuery );
+(function () {
+
+	var toggle = document.querySelector( '.volume-toggle' );
+	var video = document.getElementById('video');
+	var player = new Vimeo.Player(video);
+
+	player.setVolume(0);
+	toggle.addEventListener( 'click', function (e) {
+		e.preventDefault();
+
+		player.getVolume().then(function(volume) {
+			if( volume === 0 ) {
+				player.setVolume(1);
+				toggle.innerHTML = '';
+				toggle.innerHTML = 'mute';
+			} else {
+				player.setVolume(0);
+				toggle.innerHTML = '';
+				toggle.innerHTML = 'unmute';
+			}
+		});
+	});
+
+})();
 (function ($) {
 
 	if ('object-fit' in document.body.style) { return; }
